@@ -6,6 +6,7 @@
 > **“JUP IS HOME. PLAY JUPIFY AT HOME.”**
 
 mock-up: https://rsxitxlw.manus.space/
+updated sample: https://aoeqfjuk.manus.space/
 
 ---
 
