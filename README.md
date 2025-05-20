@@ -1,210 +1,164 @@
-# Jupify
-JUPIFY is a GameFi-powered learning hub designed to onboard, educate, and retain new users across Jupiter’s suite of DeFi products. By transforming Spot trading, perpetuals, portfolio management, token verification and drip‐farming, mobile flows, and more into interactive quests.
+# JUPIFY White Paper
 
-JUPIFY addresses three core challenges:
-Onboarding Friction: Cryptographic wallets, unfamiliar UIs, and complex product flows raise barriers.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+![Network: DevNet](https://img.shields.io/badge/Network-DevNet-blue.svg)
 
+> **“JUP IS HOME. PLAY JUPIFY AT HOME.”**
 
-Steep Learning Curve: Passive documentation often fails to impart deep product understanding.
+---
 
+## Table of Contents
 
-Engagement & Retention: Without compelling incentives or social drivers, users slip away.
+1. [Executive Summary](#executive-summary)  
+2. [Problem Statement](#problem-statement)  
+3. [Solution Overview](#solution-overview)  
+4. [Architecture & Core Mechanisms](#architecture--core-mechanisms)  
+5. [Module Breakdown](#module-breakdown)  
+   - [5.1 Spot Trading & JUP Pro](#51-spot-trading--jup-pro)  
+   - [5.2 Perps & Edge](#52-perps--edge)  
+   - [5.3 Portfolio Management](#53-portfolio-management)  
+   - [5.4 Token Verification & Drip](#54-token-verification--drip)  
+   - [5.5 Enjoyoors & Mobile Onboarding](#55-enjoyoors--mobile-onboarding)  
+6. [Gamification & Incentive Design](#gamification--incentive-design)  
+7. [Learning Flow & Feedback Loops](#learning-flow--feedback-loops)  
+8. [Technical Roadmap](#technical-roadmap)  
+9. [Security & Compliance](#security--compliance)  
+10. [Conclusion](#conclusion)  
 
+---
 
-Through gamified missions, XP and leaderboards, NFT achievements, and real JUP rewards, JUPIFY turns every feature into a hands-on classroom—driving token velocity and network effects while cultivating a community of confident, active Jupiter advocates.
+## Executive Summary
 
-2. Problem Statement
-Wallet & UI Friction
+JUPIFY is a GameFi-powered learning hub for Jupiter’s DeFi ecosystem, transforming complex on-chain products into bite-sized, interactive quests. By gamifying Spot trading, perpetual swaps, portfolio management, token verification, drip-farming, and mobile flows, we:
 
+- **Eliminate onboarding friction** around wallets & UIs  
+- **Flatten steep learning curves** with hands-on, simulated practice  
+- **Boost engagement & retention** through rewards, NFTs, and social competition  
 
-New users struggle to set up Solana wallets, bridge assets, and interact with order-books.
+---
 
+## Problem Statement
 
-Opaque Product Mechanics
+1. **Wallet & UI Friction**  
+   - New users struggle with Solana wallet setup, test-net funding, and order-book interfaces.  
+2. **Opaque Product Mechanics**  
+   - Each Jupiter product has unique, undocumented workflows lacking guided tutorials.  
+3. **Low Engagement & Churn**  
+   - Without clear feedback loops or community drivers, users seldom progress beyond basic swaps.
 
+---
 
-Spot, Perps, Portfolio, Drip-Farming, and Verification each have unique workflows that lack guided, real-time practice.
+## Solution Overview
 
+JUPIFY reframes **learning as play**:
 
-Low Engagement & Churn
+- **Interactive Quests**  
+  Step-by-step missions replicate live flows in a risk-free, simulated DevNet environment.
+- **Adaptive Difficulty**  
+  Modules unlock progressively; AI-driven hints kick in after repeated failures.
+- **On-chain Rewards**  
+  Complete missions to mint JUP tokens and rarity-tiered NFTs on DevNet.
+- **Social Competition**  
+  XP leaderboards, seasonal “Seasons of Jupiter,” and badge collections.
 
+---
 
-Without feedback loops or social competition, users rarely progress beyond token faucets and simple swaps.
+## Architecture & Core Mechanisms
 
+| Component              | Description                                                                                     |
+|------------------------|-------------------------------------------------------------------------------------------------|
+| **Frontend**           | React/Next.js SPA with modular “quest portals,” mobile-responsive.                              |
+| **Backend**            | Node.js microservices emitting mission events (`start`/`complete`).                            |
+| **Wallet Integration** | Phantom adapter on DevNet with faucet for test SOL/JUP.                                         |
+| **On-chain Rewards**   | Anchor programs mint JUP & NFTs based on mission events.                                        |
+| **Analytics**          | Real-time progress tracking, adaptive hints logic, leaderboard engine.                          |
+| **Auth**               | JWT + Solana wallet address as identity.                                                        |
 
+---
 
-3. JUPIFY Solution Overview
-JUPIFY reframes learning as play:
-Interactive Quests: Step-by-step missions mimic real product flows in a risk-free, simulated environment.
+## Module Breakdown
 
+### 5.1 Spot Trading & JUP Pro
 
-Adaptive Difficulty: Modules unlock progressively; dynamic hints and failure explanations personalize the learning curve.
+- **Objective:** Master limit orders, market orders, stop-losses.  
+- **Mechanism:** Simulated order book challenges (e.g., maintain tight spreads).  
+- **Rewards:** XP, JUP tokens for volume thresholds, “Market Maker” NFT badge.
 
+### 5.2 Perps & Edge
 
-On-chain Rewards: Completing missions mints small JUP rewards and collectible NFTs via Solana programs.
+- **Objective:** Understand funding rates, margin, liquidation.  
+- **Mechanism:** Scenario puzzles (e.g., funding-rate shocks), multiple-choice actions.  
+- **Rewards:** XP per scenario, JUP drip proportional to PnL, “Perpetual Pro” NFT.
 
+### 5.3 Portfolio Management
 
-Social Competition: XP leaderboards, seasonal events, and badge collections foster friendly rivalry.
+- **Objective:** Build & rebalance diversified portfolios.  
+- **Mechanism:** Drag-and-drop asset allocation with time-accelerated simulations.  
+- **Rewards:** Continuous JUP drip for target-band maintenance, “Balanced Builder” NFT.
 
+### 5.4 Token Verification & Drip
 
-Seamless Transition: After simulation, users “graduate” to live mode with wallet-funding prompts, bridging practice instantly into real trades.
+- **Objective:** Complete KYC-lite quizzes & drip-farming tutorials.  
+- **Mechanism:** Interactive quiz → verify JUP mint on chain → mint small JUP.  
+- **Rewards:** JUP airdrops, “Verified Voyager” NFT.
 
+### 5.5 Enjoyoors & Mobile Onboarding
 
+- **Objective:** Learn deposit, withdrawal, bridging on mobile.  
+- **Mechanism:** Tap-through mockups → “Go Live” toggle after full completion.  
+- **Rewards:** XP, priority access to live drip pools, “Mobile Master” NFT.
 
-4. Architecture & Core Mechanisms
-Component
-Description
-Frontend
-React-based SPA offers modular “quest portals” for each product; mobile‐responsive design.
-Backend
-Node.js microservices emit standardized mission events (mission:start, mission:complete).
-Wallet Integration
-Phantom/Solos integration on Devnet/Testnet; faucet for test JUP.
-On-chain Rewards
-Solana programs mint event‐driven JUP tokens and rarity‐tiered NFTs.
-Data & Analytics
-Real-time progress tracking; adaptive hint logic; leaderboard engine.
-Auth & Profiles
-JWT‐based login; Solana wallet address as user identity.
+---
 
+## Gamification & Incentive Design
 
-5. Module Breakdown
-5.1 Spot Trading & JUP Pro
-Objective: Master limit orders, market orders, and stop-losses.
+1. **XP & Leveling**  
+   - Tiered XP curves unlock advanced modules.  
+2. **Leaderboards & Seasons**  
+   - Weekly & all-time boards; seasonal tournaments.  
+3. **Achievements & NFTs**  
+   - On-chain metadata; rarity tiers reflect difficulty.  
+4. **Tokenomics**  
+   - Treasury-backed reward pool with emission schedule; on-chain vesting for high-tier badges.
 
+---
 
-Mechanism: Simulated order book with time-limited “market-making” challenges.
+## Learning Flow & Feedback Loops
 
+1. **Progressive Onboarding**  
+   - Wallet setup → Spot → Perps → Portfolio → Verification → Mobile.  
+2. **Adaptive Hints**  
+   - AI suggestions after failures to prevent frustration.  
+3. **Performance Analytics**  
+   - Post-mission reports and email summaries.  
+4. **Social Proof**  
+   - Shareable badges; referral bonuses for inviting peers.
 
-Rewards: XP for spread maintenance; JUP for hitting volume thresholds; NFT “Market Maker” badge.
+---
 
+## Technical Roadmap
 
-5.2 Perps & Edge
-Objective: Understand funding rates, margin requirements, and liquidation mechanics.
+| Phase     | Milestones                                                 | Timeline       |
+|-----------|-------------------------------------------------------------|----------------|
+| **1**     | MVP: Spot & Wallet Onboarding; Basic Rewards Engine         | Q3 2025        |
+| **2**     | Perps & Portfolio Quests; NFT Badge Framework               | Q3–Q4 2025     |
+| **3**     | Verification & Mobile Modules; Leaderboards & Analytics     | Q4 2025        |
+| **4**     | Mainnet Integration; Seasonal Events & Tournaments          | Q1 2026        |
 
+---
 
-Mechanism: Scenario puzzles (e.g., surviving a funding-rate shock) with immediate visual feedback.
+## Security & Compliance
 
+- **Audits:** Third-party audits for all on-chain programs.  
+- **Privacy:** Wallet-only identity; GDPR-aligned quiz data.  
+- **Regulatory:** Non-custodial, information-only KYC quizzes.
 
-Rewards: XP per scenario; JUP drip proportional to simulated PnL; NFT “Perpetual Pro” collector.
+---
 
+## Conclusion
 
-5.3 Portfolio Management
-Objective: Learn portfolio construction and risk rebalance.
+JUPIFY turns Jupiter’s DeFi products into an immersive learning adventure—driving faster onboarding, deeper product mastery, and organic network growth.  
 
+> **“JUP IS HOME. PLAY JUPIFY AT HOME.”**
 
-Mechanism: Drag-and-drop asset allocation; time-accelerated market simulations.
-
-
-Rewards: Continuous JUP drip for maintaining within target bands; NFT “Balanced Builder”.
-
-
-5.4 Token Verification & Drip
-Objective: Complete KYC-lite quizzes and drip-farming tutorials.
-
-
-Mechanism: Interactive quizzes unlock “Verified” status; step-by-step drip strategy guide.
-
-
-Rewards: Small JUP drip airdrops; NFT “Verified Voyager”.
-
-
-5.5 Enjoyoors & Mobile Onboarding
-Objective: Simulate deposit, withdrawal, and bridge flows on mobile.
-
-
-Mechanism: Tap-through mobile UI mockups; unlock “Live Mode” after 100% completion.
-
-
-Rewards: XP, priority access to live-mode drip pools; NFT “Mobile Master”.
-
-
-
-6. Gamification & Incentive Design
-XP & Leveling
-
-
-Modular XP curves; milestone unlocks grant access to advanced modules.
-
-
-Leaderboards & Tiers
-
-
-Seasonal “Seasons of Jupiter” competitions; weekly and all-time boards.
-
-
-Achievements & NFTs
-
-
-Rarity tiers reflect mission difficulty; metadata stored on-chain for verifiability.
-
-
-Tokenomics & Rewards
-
-
-Treasury-backed reward pool; emission schedule aligned with product launch phases to avoid inflationary pressure.
-
-
-On-chain vesting for high-tier NFT holders to encourage long-term engagement.
-
-
-
-7. Learning Flow & Feedback Loops
-Progressive Onboarding
-
-
-“First Quest” introduces wallet setup and faucet; each subsequent module builds on prior skills.
-
-
-Adaptive Hints
-
-
-AI-driven hint system triggered after repeated failures; ensures motivation over frustration.
-
-
-Performance Analytics
-
-
-Post-mission reports highlight strengths and areas for improvement; emailed summaries reinforce retention.
-
-
-Social Proof
-
-
-Badges displayed on social profiles; referral bonuses when friends complete quests.
-
-
-
-8. Technical Roadmap
-Phase
-Milestones
-Timeline (Q3–Q4 2025)
-Phase 1
-MVP: Spot & Wallet Onboarding Modules; Basic Rewards Engine
-Q3 2025
-Phase 2
-Perps, Portfolio Quests; NFT Achievement Framework
-Q3–Q4 2025
-Phase 3
-Token Verification, Mobile Onboarding, Leaderboards & Analytics
-Q4 2025
-Phase 4
-Live Integration with Mainnet JUP; Seasonal Events & Tournaments
-Late Q4 2025 – Q1 2026
-
-
-9. Security & Compliance
-Smart Contract Audits: Third-party audits for all reward-minting programs.
-
-
-Data Privacy: GDPR-aligned storage of quiz results; no personal data beyond wallet address.
-
-
-Regulatory Monitoring: KYC-lite quiz content stays within informational, non-custodial boundaries.
-
-
-
-10. Conclusion
-JUPIFY transforms Jupiter’s complex DeFi products into a cohesive, gamified learning journey. By aligning education with on-chain incentives and social competition, it streamlines onboarding, deepens product mastery, and catalyzes network effects. As passive observers become passionate advocates, JUPIFY will be the spark that turns “learners” into lifelong members of the JUP home.
-
-“JUP IS HOME. PLAY JUPIFY AT HOME.”
+---
