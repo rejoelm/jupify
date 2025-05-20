@@ -5,6 +5,8 @@
 
 > **“JUP IS HOME. PLAY JUPIFY AT HOME.”**
 
+mock-up: https://rsxitxlw.manus.space/
+
 ---
 
 ## Table of Contents
